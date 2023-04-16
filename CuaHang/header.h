@@ -1,0 +1,12 @@
+#pragma once
+#include <stdio.h>
+#include <time.h>	
+#include "windows.h" 
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <cstring>
+#include <cstdio>
+#include <iomanip>
+#include "externINT.h"
