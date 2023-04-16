@@ -11,11 +11,11 @@ void menu_NV()
     int x = 38;
     int y = 5;
     int w_box = 44;
-    int h_box = 6;
+    int h_box = 4;
     int h = 2;
     int t_color = 15;
     int b_color_hl = 118;
-    int n_cot = 3;
+    int n_cot = 2;
     gotoXY(50, 3);
     textcolor(6);
     box(50, 1, 20, 2, 6);
@@ -46,15 +46,7 @@ void menu_NV()
     gotoXY(x + 1, y + 3);
     textcolor(14);
     printf("            Them nhan vien moi             ");
-    gotoXY(48, 9);
-    for (int i = 10; i < 34; i++)
-    {
-        SetColor(t_color);
-        printf("%c", char(196));
-    }
-    gotoXY(x + 1, y + 5);
-    textcolor(14);
-    printf("            Xoa mot nhan vien              ");
+    
     int xp = x;
     int yp = y; // Toa do select_box
     int xcu = xp;
@@ -120,8 +112,6 @@ void select_box_NV(int xp, int yp, int x, int y, int b_color_hl) // Highlight bo
         printf("          Xem danh sach nhan vien          ");
     else if (yp == y + 2)
         printf("            Them nhan vien moi             ");
-    else if (yp == y + 4)
-        printf("            Xoa mot nhan vien              ");
 }
 void select_menu_NV(int yp, int y) // Chon menu
 {
