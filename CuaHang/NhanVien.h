@@ -22,3 +22,4 @@ void docTTNV(NhanVien ds[], int &n);
 void luuTTNV(NhanVien ds[], int n);
 void xemNhanVien();
 void xoaNV();
+bool isValidPhoneNumber(int phoneNum);
