@@ -437,24 +437,25 @@ void xoaNV()
         gotoXY(41, 16 + soluongNV); printf("    NHAP STT NHAN VIEN MUON XOA: ");
         ShowCur(1);
         int stt_xoa = inputNumber(2);
-        while (stt_xoa < 1 || stt_xoa > soluongNV)
+        while (stt_xoa < 1 || stt_xoa > soluongNV && stt_xoa)
         {
             if (stt_xoa == 0)
             {
                 system("cls");
-
                 xemNhanVien();
             }
             ShowCur(0);
             textcolor(116);
             gotoXY(40, 15 + soluongNV);
-            printf("                              ");
+            printf("                                  ");
             gotoXY(40, 16 + soluongNV);
-            printf("    LOI! vui long chon lai %d    ", soluongNV);
+            printf("      LOI! vui long chon lai      ");
             gotoXY(40, 17 + soluongNV);
-            printf("                              ");
+            printf("                                  ");
+            gotoXY(41 + 33, 16 + soluongNV);
+            textcolor(15);
+            printf(" ");
             Sleep(1500);
-            box(20, 13, 35, 4, 15);
             // backspace
             textcolor(0);
             for (int iy = 15 + soluongNV; iy <= 18 + soluongNV; iy++)
@@ -470,7 +471,7 @@ void xoaNV()
             textcolor(15);
             gotoXY(41, 16 + soluongNV); printf("    NHAP STT NHAN VIEN MUON XOA: ");
             ShowCur(1);
-            int stt_xoa = inputNumber(2);
+            stt_xoa = inputNumber(2);
         }
         for (int i = stt_xoa; i <= soluongNV; i++)
         {
