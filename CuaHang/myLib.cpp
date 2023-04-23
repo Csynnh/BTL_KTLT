@@ -116,7 +116,7 @@ void centerText(char* str, int length)
 bool isValidDate(int day, int month, int year)
 {
 	// Kiểm tra năm
-	if (year < 1 || year > 9999)
+	if (year < 1 || year > 2023)
 	{
 		return false;
 	}
