@@ -484,8 +484,29 @@ void khoiTaoGioHang(int& sttKH)
     gotoXY(57, 14);
     inputString(danhsachKH[sttKH].diachi, 50);
     // SDT
-    gotoXY(57, 17);
-    danhsachKH[sttKH].sdt = inputNumber(10);
+    
+    do {
+        gotoXY(57, 17);
+        danhsachKH[sttKH].sdt = inputNumber(10);
+        if (isValidPhoneNumber(danhsachKH[sttKH].sdt) == false)
+        {
+            ShowCur(0);
+            textcolor(244);
+            gotoXY(84, 16);
+            printf("     Du lieu khong hop le!     ");
+            gotoXY(84, 17);
+            printf("       VUI LONG NHAP LAI       ");
+            Sleep(1500);
+            textcolor(15);
+            gotoXY(84, 16);
+            printf("                               ");
+            gotoXY(84, 17);
+            printf("                               ");
+            ShowCur(1);
+            gotoXY(57, 17);
+            printf("            ");
+        }
+    } while (isValidPhoneNumber(danhsachKH[sttKH].sdt) == false);
     ShowCur(0);
     textcolor(114);
     gotoXY(43, 20);

@@ -284,3 +284,23 @@ void box_header(int x, int y, int w, int h, int t_color)
 	gotoXY(x + w, y);
 	printf("%c", char(191));
 }
+bool isValidPhoneNumber(int phoneNum) {
+	// Chuyển số điện thoại thành chuỗi ký tự
+	char phoneStr[11]; // Độ dài của số điện thoại là 10 chữ số, cộng thêm 1 ký tự NULL kết thúc chuỗi
+	sprintf_s(phoneStr, "%010d", phoneNum);
+
+	// Kiểm tra tiền tố và độ dài của số điện thoại
+	const char* prefixes[] = { "032", "033", "034", "035", "036", "037", "038", "039", "056", "058", "059", "070", "079", "077", "076", "078", "083", "084", "085", "081", "082" };
+	int numPrefixes = sizeof(prefixes) / sizeof(prefixes[0]);
+	int prefixMatched = 0;
+	for (int i = 0; i < numPrefixes; i++) {
+		if (strncmp(phoneStr, prefixes[i], 3) == 0) {
+			prefixMatched = 1;
+			break;
+		}
+	}
+	bool isValidLength = (strlen(phoneStr) == 10);
+
+	// Trả về kết quả
+	return (prefixMatched && isValidLength);
+}

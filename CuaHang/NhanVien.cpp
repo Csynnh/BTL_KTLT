@@ -361,6 +361,22 @@ void xemNhanVien()
         printf("%c", char(196));
     }
     // hien thi thoong tin nhan vien tu viecj doc file
+
+    if (soluongNV == 0)
+    {
+        ShowCur(0);
+        textcolor(244);
+        gotoXY(40, 15 + soluongNV);
+        printf("                                              ");
+        gotoXY(40, 16 + soluongNV);
+        printf("    KHONG CO NHAN VIEN NAO TRONG DANH SACH    ");
+        gotoXY(40, 17 + soluongNV);
+        printf("                                              ");
+        Sleep(1500);
+        textcolor(15);
+        system("cls");
+        menu_NV();
+    }
     textcolor(15);
     for(int i = 1; i <= soluongNV; i++)
     {
@@ -486,7 +502,7 @@ void xoaNV()
         printf("                                         ");
         gotoXY(40, 18 + soluongNV);
         printf("                                         ");
-        textcolor(116);
+        textcolor(242);
         gotoXY(40, 15 + soluongNV);
         printf("                                   ");
         gotoXY(40, 16 + soluongNV);
@@ -578,24 +594,4 @@ void luuTTNV(NhanVien ds[], int n)
         fwrite(&ds[i], sizeof(NhanVien), 1, f);
     }
     fclose(f);
-}
-bool isValidPhoneNumber(int phoneNum) {
-    // Chuyển số điện thoại thành chuỗi ký tự
-    char phoneStr[11]; // Độ dài của số điện thoại là 10 chữ số, cộng thêm 1 ký tự NULL kết thúc chuỗi
-    sprintf_s(phoneStr, "%010d", phoneNum);
-    
-    // Kiểm tra tiền tố và độ dài của số điện thoại
-    const char* prefixes[] = {"032", "033", "034", "035", "036", "037", "038", "039", "056", "058", "059", "070", "079", "077", "076", "078", "083", "084", "085", "081", "082"};
-    int numPrefixes = sizeof(prefixes) / sizeof(prefixes[0]);
-    int prefixMatched = 0;
-    for (int i = 0; i < numPrefixes; i++) {
-        if (strncmp(phoneStr, prefixes[i], 3) == 0) {
-            prefixMatched = 1;
-            break;
-        }
-    }
-    bool isValidLength = (strlen(phoneStr) == 10);
-    
-    // Trả về kết quả
-    return (prefixMatched && isValidLength);
 }
