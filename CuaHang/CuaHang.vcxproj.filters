@@ -36,6 +36,12 @@
     <ClCompile Include="externINT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="danhsachNV.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="danhsachKH.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="menuMain.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="externINT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="danhsachNV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="danhsachKH.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

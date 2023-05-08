@@ -1,15 +1,18 @@
 #pragma once
-typedef struct  {
-    char hoTen[30];
-    char gioiTinh[4];
-    int ngay;
-    int thang;
-    int nam;
-    char diaChi[17];
-    int sdt;
-    char chucVu[20];
+#include "danhsachNV.h"
 
-}NhanVien;
+//typedef struct  {
+//    char hoTen[30];
+//    char gioiTinh[4];
+//    int ngay;
+//    int thang;
+//    int nam;
+//    char diaChi[17];
+//    int sdt;
+//    char chucVu[20];
+//    int DoanhThu;
+//
+//}NhanVien;
 //int soluongNV = 0;
 void menu_NV();
 void select_box_NV(int xp, int yp, int x, int y, int b_color_hl);

@@ -128,6 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CuaHang.cpp" />
+    <ClCompile Include="danhsachKH.cpp" />
+    <ClCompile Include="danhsachNV.cpp" />
     <ClCompile Include="externINT.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="KhachHang.cpp" />
@@ -136,6 +138,8 @@
     <ClCompile Include="NhanVien.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="danhsachKH.h" />
+    <ClInclude Include="danhsachNV.h" />
     <ClInclude Include="externINT.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="KhachHang.h" />

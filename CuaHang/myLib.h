@@ -15,3 +15,4 @@ void inputString(char str[], int n);
 void box_header(int x, int y, int w, int h, int t_color);
 void centerText(char* str, int length);
 bool isValidPhoneNumber(int phoneNum);
+void dangnhap();

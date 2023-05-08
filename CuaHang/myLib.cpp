@@ -1,6 +1,9 @@
 ﻿#include "myLib.h"
 #include "header.h"
+#include"danhsachNV.h"
+#include "NhanVien.h"
 using namespace std;
+
 int whereX()
 {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -304,3 +307,68 @@ bool isValidPhoneNumber(int phoneNum) {
 	// Trả về kết quả
 	return (prefixMatched && isValidLength);
 }
+
+void dangnhap() {
+	sttKH = 0;
+	
+	bool isValue = false;
+	docTTNV(danhsachNV, soluongNV);
+	do {
+		box(45, 7, 30, 2, 6);
+		gotoXY(47, 6);
+		textcolor(8);
+		printf("NHAN VIEN DANG NHAP");
+		gotoXY(47, 8);
+		textcolor(8);
+		printf("UserName: ");
+		ShowCur(1);
+		gotoXY(57, 8);
+		textcolor(15);
+		char a[50];
+		inputString(a, 30);
+		ShowCur(0);
+		a[strcspn(a, "\n")] = '\0';  // xóa ký tự newline khi đọc chuỗi
+		for (int i = 1; i <= soluongNV; i++)
+		{
+			if (strcmp(a, danhsachNV[i].hoTen) == 0) {
+				isValue = true;
+				break;
+			}
+		}
+		if (isValue == false) {
+			system("cls");
+			textcolor(244);
+			gotoXY(50, 10);
+			printf("                                   ");
+			gotoXY(50, 11);
+			printf("      Khong ton tai nhan vien      ");
+			gotoXY(50, 12);
+			printf("                                   ");
+			Sleep(3000);
+			textcolor(15);
+
+			gotoXY(50, 10);
+			printf("                                   ");
+			gotoXY(50, 11);
+			printf("                                   ");
+			gotoXY(50, 12);
+			printf("                                   ");
+		}
+		} while (isValue == false);
+		system("cls");
+		textcolor(242);
+		gotoXY(50, 10);
+		printf("                                ");
+		gotoXY(50, 11);
+		printf("      Dang Nhap Thanh Cong      ");
+		gotoXY(50, 12);
+		printf("                                ");
+		Sleep(2000);
+		textcolor(15);
+		gotoXY(50, 10);
+		printf("                                ");
+		gotoXY(50, 11);
+		printf("                                ");
+		gotoXY(50, 12);
+		printf("                                ");
+	}

@@ -2,8 +2,10 @@
 #include "header.h"
 #include "myLib.h"
 #include "menuMain.h"
+#include "danhsachNV.h"
 
-NhanVien danhsachNV[10];
+
+//NhanVien danhsachNV[10];
 void menu_NV()
 {
     // Header

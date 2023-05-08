@@ -5,6 +5,7 @@
 #include "NhanVien.h"
 void menu_main()
 {
+    //dangnhap();
     int x = 50;
     int y = 4;
     int w = 20;

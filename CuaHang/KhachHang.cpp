@@ -1,4 +1,5 @@
 ﻿#include "KhachHang.h"
+#include "NhanVien.h"
 #include "header.h"
 #include "myLib.h"
 #include "menuMain.h"
@@ -564,10 +565,11 @@ void xemgiohang()
         gotoXY(101, 11 + i);
         printf("%d", danhsachKH[sttKH].GH[i].soluong);
         gotoXY(112, 11 + i);
-        printf("%d$", danhsachKH[sttKH].GH[i].gia);
+        printf("%d$", danhsachKH[sttKH].GH[i].soluong * danhsachKH[sttKH].GH[i].gia);
     }
-    gotoXY(109, 26);
     textcolor(15);
+    gotoXY(109, 26);
+    gotoXY(90, 26);
     printf("%d $", tinhGH(sttKH));
 }
 void n_box_KH(int x, int y, int w, int h, int t_color, int n_cot)
@@ -752,11 +754,15 @@ void menu_DT()
     char text2[20] = "TONG TIEN THU DUOC";
     centerText(text2, 84);
     gotoXY(56, 10);
+    printf("           ");
+    gotoXY(56, 10);
     printf("%d $", tinhTongDoanhThu());
 
     gotoXY(16, 12);
     char text4[30] = "TONG GIAO DICH THUC HIEN DUOC";
     centerText(text4, 84);
+    gotoXY(56, 13);
+    printf("           ");
     gotoXY(56, 13);
     printf("%d", sttKH);
 
@@ -806,9 +812,9 @@ void menu_DT()
     }
 }
 int tinhTongDoanhThu() {
-    int sum = 0;
     // Mở file để đọc dữ liệu
-    layDuLieuTuFile(danhsachKH, sttKH);
+    docTTNV(danhsachNV, soluongNV);
+    int sum = danhsachNV[soluongNV].DoanhThu;
     for (int i = 1; i <= sttKH; i++)
     {
         for (int j = 1; j <= danhsachKH[i].soluongSP; j++)
@@ -833,6 +839,7 @@ int  tinhDT_SP(int loai)//Ham tinh doanh thu cua tung loai san pham
 }
 int tinhGH(int a)//Tinh gio hang tai khach hang thu 'a'
 {
+   
     int sum = 0;
     for (int i = 1; i <= danhsachKH[a].soluongSP; i++)
     {
